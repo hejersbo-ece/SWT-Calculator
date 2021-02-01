@@ -42,5 +42,14 @@ namespace Calculator.Test.Unit
         {
             Assert.IsTrue(Double.IsNegativeInfinity(_calc.Add(-1.7976931348623157E+308, -1.7976931348623157E+308)));
         }
+
+        [TestCase(3.5, 2.5, 1.0)]
+        [TestCase(-3.5, 2.5, -6.0)]
+        [TestCase(-3.5, -2.5, -1.0)]
+        public void Subtract_AllSignCombinations_Pass(double a, double b, double expected)
+        {
+            // Act and Assert
+            Assert.That(expected, Is.EqualTo(_calc.Subtract(a, b)));
+        }
     }
 }
