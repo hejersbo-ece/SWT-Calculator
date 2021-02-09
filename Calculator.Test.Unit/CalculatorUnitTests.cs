@@ -60,5 +60,14 @@ namespace Calculator.Test.Unit
             // Act and Assert
             Assert.That(expected, Is.EqualTo(_calc.Multiply(a, b)));
         }
+
+        [TestCase(3.5, 2, 12.25)]
+        [TestCase(-3.5, 2, 12.25)]
+        [TestCase(-4, -1, -0.25)]
+        public void Power_AllSignCombinations_Pass(double a, double b, double expected)
+        {
+            // Act and Assert
+            Assert.That(expected, Is.EqualTo(_calc.Power(a, b)));
+        }
     }
 }
